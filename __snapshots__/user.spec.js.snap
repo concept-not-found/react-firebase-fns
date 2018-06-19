@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`user should render undefined initially 1`] = `"user: undefined"`;
+
+exports[`user when the user logs in, component is re-rendered 1`] = `"user: {\\"displayName\\":\\"some user\\"}"`;
+
+exports[`user when the user logs out, component is re-rendered 1`] = `"user: undefined"`;

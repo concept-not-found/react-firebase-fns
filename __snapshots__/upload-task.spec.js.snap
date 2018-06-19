@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`user should render {} initially 1`] = `"snapshot: {}"`;
+
+exports[`user when state changes, snapshot is rendered 1`] = `"snapshot: {\\"bytesTransferred\\":\\"some bytes transferred\\",\\"totalBytes\\":\\"some total bytes\\"}"`;

@@ -2,4 +2,4 @@
 
 exports[`value should render undefined initially 1`] = `"value: undefined"`;
 
-exports[`value when a value is updated, component is re-rendered 1`] = `"value: some value"`;
+exports[`value when the value is updated, component is re-rendered 1`] = `"value: some value"`;

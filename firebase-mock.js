@@ -12,14 +12,23 @@ module.exports = () => {
         off: self.offMock
       }
     }),
+    onAuthStateChangedMock: jest.fn((listener) => {
+      return self.unsubscribeOnAuthStateChanged
+    }),
+    unsubscribeOnAuthStateChanged: jest.fn(),
     Firebase: {
-      database() {
+      database () {
         return {
           ref: self.refMock
+        }
+      },
+      auth () {
+        return {
+          onAuthStateChanged: self.onAuthStateChangedMock
         }
       }
     }
   }
 
-  return self;
+  return self
 }

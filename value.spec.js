@@ -25,7 +25,7 @@ describe('value', () => {
     expect(refMock.mock.calls[0][0]).toBe('some path')
     const listener = onMock.mock.calls[0][1]
     listener({
-      val() {
+      val () {
         return 'some value'
       }
     })
@@ -47,7 +47,7 @@ describe('value', () => {
   })
 
   it('when the path changes a new listener is created', () => {
-    const {onMock, offMock, refMock, Firebase} = FirebaseMock()
+    const {onMock, refMock, Firebase} = FirebaseMock()
     const Value = ValueFactory(Firebase)
     const component = create(createElement(Value, {path: 'some path'},
       (value) => `value: ${value}`

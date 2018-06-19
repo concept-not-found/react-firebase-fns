@@ -27,7 +27,7 @@ describe('list', () => {
     const childAddedListener = onMock.mock.calls[0][1]
     childAddedListener({
       key: 'some key',
-      val() {
+      val () {
         return 'some value'
       }
     })
@@ -46,7 +46,7 @@ describe('list', () => {
     const childAddedListener = onMock.mock.calls[0][1]
     childAddedListener({
       key: 'some key',
-      val() {
+      val () {
         return 'some value'
       }
     })
@@ -70,7 +70,7 @@ describe('list', () => {
     const childAddedListener = onMock.mock.calls[0][1]
     childAddedListener({
       key: 'some key',
-      val() {
+      val () {
         return 'some value'
       }
     })
@@ -78,7 +78,7 @@ describe('list', () => {
     const childChangedListener = onMock.mock.calls[2][1]
     childChangedListener({
       key: 'some key',
-      val() {
+      val () {
         return 'some other value'
       }
     })
@@ -102,7 +102,7 @@ describe('list', () => {
   })
 
   it('when the path changes a new listeners are created', () => {
-    const {onMock, offMock, refMock, Firebase} = FirebaseMock()
+    const {onMock, refMock, Firebase} = FirebaseMock()
     const List = ListFactory(Firebase)
     const component = create(createElement(List, {path: 'some path'},
       (list) => `list: ${JSON.stringify(list)}`

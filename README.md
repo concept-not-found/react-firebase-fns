@@ -63,6 +63,17 @@ Unlike other components, User is a [React Context](https://reactjs.org/docs/cont
 </User.Provider>
 ```
 
+### Upload task
+The the progress for a [Storage](https://firebase.google.com/docs/storage/) upload. Equivalent to https://firebase.google.com/docs/storage/web/upload-files#monitor_upload_progress
+
+```js
+const uploadTask = storageRef.put(file)
+// ...some lines later
+<UploadTask uploadTask={uploadTask}>{({bytesTransferred, totalBytes}) =>
+  <progress value={bytesTransferred} max={totalBytes}></progress>
+}</UploadTask>
+```
+
 Missing components?
 -------------------
 The entire SDK won't be exposed in this library. Only the parts with a realtime aspect make sense.
@@ -73,8 +84,6 @@ The following is not implemented yet. Make a pull request? ❤️
  * [Presence](https://firebase.google.com/docs/database/web/offline-capabilities#section-presence)
 ### Cloud Firestore
  * [Realtime updates](https://firebase.google.com/docs/firestore/query-data/listen)
-### Storage
- * [Upload progress](https://firebase.google.com/docs/storage/web/upload-files#monitor_upload_progress)
 
 Installation
 ------------
