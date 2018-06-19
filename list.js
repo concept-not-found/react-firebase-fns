@@ -90,7 +90,7 @@ module.exports = (Firebase) => class extends Component {
         return
       }
       this.reference.off('child_added', this.onChildAddedListener)
-      this.reference.off('child_removed', this.onChildAddonChildRemovedListeneredListener)
+      this.reference.off('child_removed', this.onChildRemovedListener)
       this.reference.off('child_changed', this.onChildChangedListener)
       this.reference = undefined
     }

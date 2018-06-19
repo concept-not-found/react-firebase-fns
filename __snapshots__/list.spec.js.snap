@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`list should render {} initially 1`] = `"list: {}"`;
+
+exports[`list when a child is added, component is re-rendered 1`] = `"list: {\\"some key\\":\\"some value\\"}"`;
+
+exports[`list when a child is changed, component is re-rendered 1`] = `"list: {\\"some key\\":\\"some other value\\"}"`;
+
+exports[`list when a child is removed, component is re-rendered 1`] = `"list: {}"`;

@@ -1,37 +1,12 @@
 const {createElement} = require('react')
 const {create} = require('react-test-renderer')
 
+const FirebaseMock = require('./firebase-mock')
 const ValueFactory = require('./value')
-
-function MockFirebase() {
-  const self = {
-    onMock: jest.fn((event, listener) => {
-      return listener
-    }),
-    offMock: jest.fn((event, listener) => {
-      return listener
-    }),
-    refMock: jest.fn((path) => {
-      return {
-        on: self.onMock,
-        off: self.offMock
-      }
-    }),
-    Firebase: {
-      database() {
-        return {
-          ref: self.refMock
-        }
-      }
-    }
-  }
-
-  return self;
-}
 
 describe('value', () => {
   it('should render undefined initially', () => {
-    const {refMock, Firebase} = MockFirebase()
+    const {refMock, Firebase} = FirebaseMock()
     const Value = ValueFactory(Firebase)
     const component = create(createElement(Value, {path: 'some path'},
       (value) => `value: ${value}`
@@ -41,8 +16,8 @@ describe('value', () => {
       .toMatchSnapshot()
   })
 
-  it('when a value is updated, component is re-rendered', () => {
-    const {onMock, refMock, Firebase} = MockFirebase()
+  it('when the value is updated, component is re-rendered', () => {
+    const {onMock, refMock, Firebase} = FirebaseMock()
     const Value = ValueFactory(Firebase)
     const component = create(createElement(Value, {path: 'some path'},
       (value) => `value: ${value}`
@@ -59,7 +34,7 @@ describe('value', () => {
   })
 
   it('when component is unmounted, listener is removed', () => {
-    const {onMock, offMock, refMock, Firebase} = MockFirebase()
+    const {onMock, offMock, refMock, Firebase} = FirebaseMock()
     const Value = ValueFactory(Firebase)
     const component = create(createElement(Value, {path: 'some path'},
       (value) => `value: ${value}`
@@ -72,7 +47,7 @@ describe('value', () => {
   })
 
   it('when the path changes a new listener is created', () => {
-    const {onMock, offMock, refMock, Firebase} = MockFirebase()
+    const {onMock, offMock, refMock, Firebase} = FirebaseMock()
     const Value = ValueFactory(Firebase)
     const component = create(createElement(Value, {path: 'some path'},
       (value) => `value: ${value}`
@@ -86,7 +61,7 @@ describe('value', () => {
   })
 
   it('when the path changes the existing listener is cleaned up', () => {
-    const {onMock, offMock, refMock, Firebase} = MockFirebase()
+    const {onMock, offMock, refMock, Firebase} = FirebaseMock()
     const Value = ValueFactory(Firebase)
     const component = create(createElement(Value, {path: 'some path'},
       (value) => `value: ${value}`
