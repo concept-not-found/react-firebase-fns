@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`value should render undefined initially 1`] = `"value: undefined"`;
+
+exports[`value when a value is updated, component is re-rendered 1`] = `"value: some value"`;
