@@ -83,7 +83,7 @@ The following is not implemented yet. Make a pull request? ❤️
  * [Connection state](https://firebase.google.com/docs/database/web/offline-capabilities#section-connection-state)
  * [Presence](https://firebase.google.com/docs/database/web/offline-capabilities#section-presence)
 ### Cloud Firestore
- * [Realtime updates](https://firebase.google.com/docs/firestore/query-data/listen)
+ * [Realtime updates](https://firebase.google.com/docs/firestore/query-data/listen) ([Alternative](https://github.com/green-arrow/react-firestore#firestoredocument))
 
 Installation
 ------------
